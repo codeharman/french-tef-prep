@@ -43,3 +43,14 @@ a:hover {
   align-items: start;
   gap: 10px;
 }
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: rgb(138, 221, 246);
+  border-radius: 20px;
+  border: 8px solid #0a2342;
+}

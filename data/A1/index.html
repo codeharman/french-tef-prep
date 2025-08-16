@@ -9,8 +9,63 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
+  <meta charset="UTF-8">
+  <title>Pronunciation Widget</title>
+  <style>
+    /* Floating widget box */
+    #widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-family: Arial, sans-serif;
+      width: 220px;
+    }
+
+    #widget input {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    #widget button {
+      width: 100%;
+      padding: 6px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #widget button:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 <body>
+ <!-- Floating widget -->
+  <div id="widget">
+    <input type="text" id="text" placeholder="Type something..." />
+    <button onclick="speakText()">🔊 Pronounce</button>
+  </div>
+
+  <script>
+    function speakText() {
+      const text = document.getElementById('text').value;
+      if (!text) return;
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'fr-FR'; // Set language (French)
+      speechSynthesis.speak(utterance);
+    }
+  </script>
   <h1>A1 - Beginner</h1>
   <ol>
     <li>alphabets</li>
@@ -262,6 +317,31 @@
       <li>Au revoir(formal) - or rvwar - Goodbye</li>
       <li>S'il vous plaît/S'il te plaît(formal / informal) - sil vu ple - please</li>
     </ol>
+  </p>
+  <h2>9. Week days</h2>
+  <p>
+    Week days in french are easy and can learn easily
+     <script type ="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <ol>
+      <li>Lundi - lun-dee - Monday</li>
+      <li>Mardi - mar-dee - Tuesday</li>
+      <li>Mercredi - mer-kruh-dee - Wednesday</li>
+      <li>Jeudi - zhuh-dee - Thursday</li>
+      <li>Vendredi - vahn-druh-dee - Friday</li>
+      <li>Samedi - sahm-dee - Saturday</li>
+      <li>Dimanche - dee-mahnsh - Sunday</li>
+      <li>day - le jour</li>
+      <li>today - aujourd'hui</li>
+      <li>week - la semaine</li>
+      <li>tomorrow - demain</li>
+      <li>yesterday - hier</li>
+      <li>day after tomorrow - après-demain</li>
+      <li>day before yesterday - avant-hier</li>
+      <li>next - prochain (M) / prochaine (F)</li>
+      <li>last - dernier / dernière</li>
+      <li>the following day - le lendemain</li>
+      <li>the day before - la vielle</li>
+      <li>the same day - le même jour</li>
   </p>
   <!-- Vercel Analytics -->
 <script type="module">
